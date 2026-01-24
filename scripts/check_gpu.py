@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 
+print(f"Cuda is available: {torch.cuda.is_available()}")
+
 # Test a simple attention-like operation
 x = torch.randn(1, 10, 512).cuda()
 m = nn.Linear(512, 512).cuda()
