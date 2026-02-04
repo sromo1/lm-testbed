@@ -208,7 +208,6 @@ __marimo__/
 
 # Repo Folders and Files
 data/
-models/
 
 # Model weights
 *.pth
