@@ -4,17 +4,6 @@ import tiktoken
 
 class GPTDatasetV1(Dataset):
     def __init__(self, txt:str, tokenizer, max_length:int, stride:int):
-        """
-        Docstring for __init__
-        
-        :param txt: Text to load to the dataset
-        :type txt: str
-        :param tokenizer: Tokenizer
-        :param max_length: Sliding window length
-        :type max_length: int
-        :param stride: Sliding windows 'steps' to control overlap between dataset samples
-        :type stride: int
-        """
         self.input_ids = []
         self.target_ids = []
 

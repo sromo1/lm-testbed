@@ -14,13 +14,13 @@ def generate_and_print_sample(model:nn.Module, tokenizer:tiktoken.core.Encoding,
 
     Parameters
     ----------
-    model (nn.Module):
+    model : nn.Module
         Language model.
-    tokenizer (tiktoken.core.Encoding):
+    tokenizer : tiktoken.core.Encoding
         Model tokenizer.
-    device (troch.device):
+    device : troch.device
         Device to generate in.
-    start_context (str)
+    start_context : str
         Text to serve as start context for the model.
 
     Returns
@@ -46,22 +46,22 @@ def evaluate_model(model:nn.Module, train_loader:DataLoader, val_loader:DataLoad
 
     Parameters
     ----------
-    model (nn.Module):
+    model : nn.Module
         Language model.
-    train_loader (DataLoader):
+    train_loader : DataLoader
         DataLoader with training data.
-    val_loader (DataLoader):
+    val_loader : DataLoader
         Dataloader with validation data.
-    device (torch.device):
+    device : torch.device
         Device to procees training and validation data.
-    eval_iter (int):
+    eval_iter : int
         Number of batches to calculate the loss on.
 
     Returns
     -------
-    train_loss (float):
+    train_loss : float
         Average training loss across batches.
-    val_loss (float):
+    val_loss : float
         Average validation loss across batches.
     """
     model.eval()    # Disable dropout during evaluation for stable, reproducible results
@@ -80,26 +80,35 @@ def train_model_simple(model:nn.Module, train_loader:DataLoader, val_loader:Data
 
     Parameters
     ----------
-    model (nn.Module):
+    model : nn.Module
         Language model.
-    train_loader (DataLoader):
+    train_loader : DataLoader
         DataLoader with training data.
-    val_loader (DataLoader):
+    val_loader : DataLoader
         Dataloader with validation data.
-    optimizer (torch.optim.Optimizer):
+    optimizer : torch.optim.Optimizer
         Optimizer used for training.
-    device (torch.device):
+    device : torch.device
         Device to procees training and validation data.
-    num_epochs (int):
+    num_epochs : int
         Number of epochs to train the model for.
-    eval_freq (int):
+    eval_freq : int
         Epoch frequency in which to evaluate the model.
-    eval_iter (int):
+    eval_iter : int
         Number of batches to calculate the loss on.
-    start_context (str)
+    start_context : str
         Text to serve as start context for the model.
-    tokenizer (tiktoken.core.Encoding):
-        Model tokenizer.    
+    tokenizer : tiktoken.core.Encoding
+        Model tokenizer.
+
+    Returns
+    -------
+    train_losses : list[float]
+        List of training losses across iterations.
+    val_losses : list[float]
+        List of validation losses across iterations.
+    track_tokens_seen : list[int]
+        List of number of tokens seen across iterations.
     """
     train_losses, val_losses, track_tokens_seen = [], [], []        # Initialize lists to track losses and tokens seen
     tokens_seen, global_step = 0, -1

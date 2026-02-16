@@ -7,9 +7,9 @@ def text_to_token_ids(text:str, tokenizer:tiktoken.core.Encoding):
 
     Parameters
     ----------
-    text (str):
+    text : str
         Text to convert.
-    tokenizer (tiktoken.core.Encoding):
+    tokenizer : tiktoken.core.Encoding
         Tokenizer.
 
     Returns
@@ -28,9 +28,9 @@ def token_ids_to_text(token_ids:torch.Tensor, tokenizer:tiktoken.core.Encoding):
 
     Parameters
     ----------
-    token_ids (torch.Tensor):
+    token_ids : torch.Tensor
         Tensor containing token IDs.
-    tokenizer (tiktoken.core.Encoding):
+    tokenizer : tiktoken.core.Encoding
         Tokenizer.
     
     Returns
