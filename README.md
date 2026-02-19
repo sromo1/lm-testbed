@@ -1,5 +1,5 @@
-# lm-testbed
-A testbed for language models
+# lm-workbench
+A workbench for language models
 
 ## Repo Structure:
 ```
