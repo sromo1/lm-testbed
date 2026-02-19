@@ -1,7 +1,7 @@
 [project]
-name = "lm-testbed"
+name = "lm-workbench"
 version = "0.1.0"
-description = "Add your description here"
+description = "A wokbench for dissecting and building LMs"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
